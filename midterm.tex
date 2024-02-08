@@ -1,0 +1,108 @@
+\documentclass[12pt]{article}
+\usepackage{charter} % font
+\usepackage[margin=1in]{geometry} % margin
+\usepackage{hyperref} % hyperlinks
+\usepackage{enumitem} % Enumeration
+\usepackage{graphicx} % images
+\usepackage{amsthm} % theorems
+\usepackage{float} % image placement
+
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[section]
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\title{Midterm Study Guide}
+
+\author{Zack Traczyk \\ CSE 102 - Vaggos, Spring 2024}
+\date{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+	\maketitle
+
+	\tableofcontents
+
+	\pagebreak
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\section{Review - Asymptotic Bounds}
+
+	\begin{definition}[Big-O]
+		$f(n) = O(g(n))$ if there exists a positive constant $c$ and an integer
+		$n_0$ such that $f(n) \leq c \cdot g(n)$ for all $n \geq n_0$.
+	\end{definition}
+
+	\begin{definition}[Big-$\Omega$]
+		$f(n) = \Omega(g(n))$ if there exists a positive constant $c$ and an
+		integer $n_0$ such that $c \cdot g(n) \leq f(n)$ for all $n \geq n_0$.
+	\end{definition}
+
+	\begin{definition}[Big-$\Theta$]
+		$f(n) = \Theta(g(n))$ if there exists positive constants $c_1$, $c_2$,
+		and an integer $n_0$ such that $c_1 \cdot g(n) \leq f(n) \leq c_2 \cdot
+		g(n)$ for all $n \geq n_0$.
+	\end{definition}
+
+	\section{Review - Inductive Proofs}
+
+	\section{Solving Recurrence Relations}
+
+	\subsection{Master Theorem}
+
+	\subsection{Unpacking Tree / Algebraic Pattern}
+
+	\subsection{Substitution}
+
+	\subsection{Guess and Verify}
+
+	\subsection{Practice Problems}
+
+	\noindent \textbf{HW3 - Ex.4} Like in many previous exercises and homeworks,
+	find tight asymptotic bounds (big-Theta) for $T(n)$ in each of the cases.
+	\begin{itemize}
+		\item $T(n)=2T(n/4)+n^2\sqrt n$
+		\item $T(n)=T(n-1)+\frac1n$
+		\item $T(n)=1600T(n/4)+n!$ (hint: answering this shouldn't require too
+			many, if any, difficult calculations) 
+		\item $T(n)=6T(n/3)+n^4/\log^{25} n$ (hint: answering this shouldn't
+			require too many, if any, difficult calculations)
+		\item  $T(n)=\sqrt n T(\sqrt{n}) + n$ (hint: when everything fails, you
+			guess and check)
+		\item $T(n)=T(n/2)+n(5-\cos^2n\sin^{20}n)$ (hint: answering this shouldn't
+			require too many, if any, difficult calculations, just think the most
+			basic trigonometric inequality)
+		\item $T(n)=\alpha T(n/4)+n^2$ (hint: your answer should depend on the
+			$\alpha$ parameter)
+		\item $T(n)=5T(n/5) +\frac{n}{\log_5 n}$ (hint: think of $n=5^m$. Also the
+			recursion $T(n)=T(n-1)+\frac1n$ above may come in handy.)
+	\end{itemize}
+
+	\section{Algorithms}
+
+	\subsection{Binary Search}
+
+	\subsection{Sorting}
+
+	\subsubsection{Lower Bounds}
+
+	\subsection{Merge Sort}
+
+	\subsection{Number of leaves / depth as proof for lower asymptotic bounds}
+
+	\subsection{Quick Select}
+
+	\subsection{Dynamic Programming}
+
+	\subsubsection{Fibonacci}
+
+	\subsubsection{Binomial Coefficients}
+
+	\subsubsection{Maximize independent set}
+
+\end{document}
+
