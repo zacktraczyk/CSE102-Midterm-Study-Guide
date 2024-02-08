@@ -60,8 +60,6 @@
 
 	\tableofcontents
 
-	\pagebreak
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -116,68 +114,35 @@
 		\end{gather}
 	\end{proof}
 
-
-	\subsection{Practice Problems}
-
-	\begin{problem}{HW1 - Ex.1 Part 2}{\psetone}
-		Prove that $T(n) = 2T(n - 1) + 1$ is $T(n) = 2^n - 1$.
-	\end{problem}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 	\section{Solving Recurrence Relations}
 
 	\subsection{Master Theorem}
 
+	\begin{definition}[Master Theorem]
+		Let $a \geq 1$ and $b > 1$ be constants, let $f(n)$ be a function, and
+		let $T(n)$ be defined on the nonnegative integers by the recurrence
+		$$T(n) = aT(n/b) + f(n)$$
+		where we interpret $n/b$ to mean either $\lfloor n/b \rfloor$ or
+		$\lceil n/b \rceil$. Then $T(n)$ has the following asymptotic bounds:
+		\begin{enumerate}
+			\item If $f(n) = O(n^{\log_b a - \epsilon})$ for some constant
+				$\epsilon > 0$, then $T(n) = \Theta(n^{\log_b a})$.
+			\item If $f(n) = \Theta(n^{\log_b a})$, then $T(n) = \Theta(n^{\log_b
+				a} \log n)$.
+			\item If $f(n) = \Omega(n^{\log_b a + \epsilon})$ for some constant
+				$\epsilon > 0$, and if $a f(n/b) \leq k f(n)$ for some constant
+				$k < 1$ and all sufficiently large $n$, then $T(n) = \Theta(f(n))$.
+		\end{enumerate}
+	\end{definition}
+
+
 	\subsection{Unpacking Tree / Algebraic Pattern}
 
 	\subsection{Substitution}
 
 	\subsection{Guess and Verify}
-
-	\subsection{Practice Problems}
-
-	Like in many previous exercises and homeworks, find tight asymptotic bounds
-	(big-Theta) for $T(n)$ in each of the cases.
-
-	\begin{problem}{HW3 - Ex.4}{\psetthree}
-		$T(n)=2T(n/4)+n^2\sqrt n$
-	\end{problem}
-
-	\begin{problem}{HW3 - Ex.4}{\psetthree}
-		$T(n)=T(n-1)+\frac1n$
-	\end{problem}
-
-	\begin{problem}{HW3 - Ex.4}{\psetthree}
-		$T(n)=1600T(n/4)+n!$ (hint: answering this shouldn't require too many,
-		if any, difficult calculations)
-	\end{problem}
-
-	\begin{problem}{HW3 - Ex.4}{\psetthree}
-		$T(n)=6T(n/3)+n^4/\log^{25} n$ (hint: answering this shouldn't require
-		too many, if any, difficult calculations)
-	\end{problem}
-
-	\begin{problem}{HW3 - Ex.4}{\psetthree}
-		$T(n)=\sqrt n T(\sqrt{n}) + n$ (hint: when everything fails, you guess
-		and check)
-	\end{problem}
-
-	\begin{problem}{HW3 - Ex.4}{\psetthree}
-		$T(n)=T(n/2)+n(5-\cos^2n\sin^{20}n)$ (hint: answering this shouldn't
-		require too many, if any, difficult calculations, just think the most
-		basic trigonometric inequality)
-	\end{problem}
-
-	\begin{problem}{HW3 - Ex.4}{\psetthree}
-		$T(n)=\alpha T(n/4)+n^2$ (hint: your answer should depend on the
-		$\alpha$ parameter)
-	\end{problem}
-
-	\begin{problem}{HW3 - Ex.4}{\psetthree}
-		$T(n)=5T(n/5) +\frac{n}{\log_5 n}$ (hint: think of $n=5^m$. Also the
-		recursion $T(n)=T(n-1)+\frac1n$ above may come in handy.)
-	\end{problem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -202,6 +167,90 @@
 	\subsubsection{Binomial Coefficients}
 
 	\subsubsection{Maximize independent set}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\section{Practice Problems}
+
+	\subsection{Introductory Material Review}
+
+	\begin{problem}{HW1 - Ex.2}{\psetone}
+		Let	$f(n)=100n^2 +10n+1000$. Use the definition of Big-O to prove
+		$f(n)=O(n^2)$.
+	\end{problem}
+
+	\begin{problem}{HW1 - Ex.2}{\psetone}
+		Let $f(n)=100n + 0.001n\log n$. Use the definition of Big-O to prove
+		$f(n)=O(n\log n)$.
+	\end{problem}
+
+	\begin{problem}{HW1 - Ex.2}{\psetone}
+		Let $f(n)=50n\log n + 30n$. Use the definition of Big-O to prove
+		$f(n)=O(n^3)$.
+	\end{problem}
+
+	\begin{problem}{HW1 - Ex.1 Part 2}{\psetone}
+		Prove that $T(n) = 2T(n - 1) + 1$ is $T(n) = 2^n - 1$.
+	\end{problem}
+
+
+	\subsection{Solving Recurrence Relations}
+
+
+	\begin{problem}{HW3 - Ex.4}{\psetthree}
+		Find tight asymptotic bounds (big-Theta) for $T(n)=2T(n/4)+n^2\sqrt n$
+	\end{problem}
+
+	\begin{problem}{HW3 - Ex.4}{\psetthree}
+		Find tight asymptotic bounds
+		(big-Theta) for
+		$T(n)=T(n-1)+\frac1n$
+	\end{problem}
+
+	\begin{problem}{HW3 - Ex.4}{\psetthree}
+		Find tight asymptotic bounds
+		(big-Theta) for
+		$T(n)=1600T(n/4)+n!$ (hint: answering this shouldn't require too many,
+		if any, difficult calculations)
+	\end{problem}
+
+	\begin{problem}{HW3 - Ex.4}{\psetthree}
+		Find tight asymptotic bounds
+		(big-Theta) for
+		$T(n)=6T(n/3)+n^4/\log^{25} n$ (hint: answering this shouldn't require
+		too many, if any, difficult calculations)
+	\end{problem}
+
+	\begin{problem}{HW3 - Ex.4}{\psetthree}
+		Find tight asymptotic bounds
+		(big-Theta) for
+		$T(n)=\sqrt n T(\sqrt{n}) + n$ (hint: when everything fails, you guess
+		and check)
+	\end{problem}
+
+	\begin{problem}{HW3 - Ex.4}{\psetthree}
+		Find tight asymptotic bounds
+		(big-Theta) for
+		$T(n)=T(n/2)+n(5-\cos^2n\sin^{20}n)$ (hint: answering this shouldn't
+		require too many, if any, difficult calculations, just think the most
+		basic trigonometric inequality)
+	\end{problem}
+
+	\begin{problem}{HW3 - Ex.4}{\psetthree}
+		Find tight asymptotic bounds
+		(big-Theta) for
+		$T(n)=\alpha T(n/4)+n^2$ (hint: your answer should depend on the
+		$\alpha$ parameter)
+	\end{problem}
+
+	\begin{problem}{HW3 - Ex.4}{\psetthree}
+		Find tight asymptotic bounds
+		(big-Theta) for
+		$T(n)=5T(n/5) +\frac{n}{\log_5 n}$ (hint: think of $n=5^m$. Also the
+		recursion $T(n)=T(n-1)+\frac1n$ above may come in handy.)
+	\end{problem}
+
+	\subsection{Algorithms}
 
 \end{document}
 
