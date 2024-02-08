@@ -8,7 +8,15 @@
 \usepackage{float} % image placement
 
 \theoremstyle{definition}
-\newtheorem{definition}{Definition}[section]
+\newtheorem{definition}{Definition}
+\newtheorem{practiceproblem}{Problem}[section]
+
+\def\scratchwork{\vspace*{10em}} % space for problem solving
+
+\newenvironment{problem}
+	{\noindent\begin{minipage}{\textwidth}\begin{practiceproblem}}
+	{\scratchwork\end{practiceproblem}\end{minipage}}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -30,7 +38,9 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-	\section{Review - Asymptotic Bounds}
+	\section{Introductory Material Review}
+
+	\subsection{Asymptotic Bounds}
 
 	\begin{definition}[Big-O]
 		$f(n) = O(g(n))$ if there exists a positive constant $c$ and an integer
@@ -48,7 +58,9 @@
 		g(n)$ for all $n \geq n_0$.
 	\end{definition}
 
-	\section{Review - Inductive Proofs}
+	\subsection{Inductive Proofs}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 	\section{Solving Recurrence Relations}
 
@@ -62,25 +74,44 @@
 
 	\subsection{Practice Problems}
 
-	\noindent \textbf{HW3 - Ex.4} Like in many previous exercises and homeworks,
-	find tight asymptotic bounds (big-Theta) for $T(n)$ in each of the cases.
-	\begin{itemize}
-		\item $T(n)=2T(n/4)+n^2\sqrt n$
-		\item $T(n)=T(n-1)+\frac1n$
-		\item $T(n)=1600T(n/4)+n!$ (hint: answering this shouldn't require too
-			many, if any, difficult calculations) 
-		\item $T(n)=6T(n/3)+n^4/\log^{25} n$ (hint: answering this shouldn't
-			require too many, if any, difficult calculations)
-		\item  $T(n)=\sqrt n T(\sqrt{n}) + n$ (hint: when everything fails, you
-			guess and check)
-		\item $T(n)=T(n/2)+n(5-\cos^2n\sin^{20}n)$ (hint: answering this shouldn't
-			require too many, if any, difficult calculations, just think the most
-			basic trigonometric inequality)
-		\item $T(n)=\alpha T(n/4)+n^2$ (hint: your answer should depend on the
-			$\alpha$ parameter)
-		\item $T(n)=5T(n/5) +\frac{n}{\log_5 n}$ (hint: think of $n=5^m$. Also the
-			recursion $T(n)=T(n-1)+\frac1n$ above may come in handy.)
-	\end{itemize}
+	\subsubsection{HW3 - Ex.4}
+
+	Like in many previous exercises and homeworks, find tight asymptotic bounds
+	(big-Theta) for $T(n)$ in each of the cases.
+
+	\begin{problem}
+		$T(n)=2T(n/4)+n^2\sqrt n$
+	\end{problem}
+	\begin{problem}
+		$T(n)=T(n-1)+\frac1n$
+	\end{problem}
+	\begin{problem}
+		$T(n)=1600T(n/4)+n!$ (hint: answering this shouldn't require too many,
+		if any, difficult calculations)
+	\end{problem}
+	\begin{problem}
+		$T(n)=6T(n/3)+n^4/\log^{25} n$ (hint: answering this shouldn't require
+		too many, if any, difficult calculations)
+	\end{problem}
+	\begin{problem}
+		$T(n)=\sqrt n T(\sqrt{n}) + n$ (hint: when everything fails, you guess
+		and check)
+	\end{problem}
+	\begin{problem}
+		$T(n)=T(n/2)+n(5-\cos^2n\sin^{20}n)$ (hint: answering this shouldn't
+		require too many, if any, difficult calculations, just think the most
+		basic trigonometric inequality)
+	\end{problem}
+	\begin{problem}
+		$T(n)=\alpha T(n/4)+n^2$ (hint: your answer should depend on the
+		$\alpha$ parameter)
+	\end{problem}
+	\begin{problem}
+		$T(n)=5T(n/5) +\frac{n}{\log_5 n}$ (hint: think of $n=5^m$. Also the
+		recursion $T(n)=T(n-1)+\frac1n$ above may come in handy.)
+	\end{problem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 	\section{Algorithms}
 
