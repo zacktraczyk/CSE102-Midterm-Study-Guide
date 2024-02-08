@@ -3,27 +3,31 @@
 \usepackage[margin=1in]{geometry} % margin
 \usepackage{hyperref} % hyperlinks
 \usepackage{enumitem} % Enumeration
+\usepackage{xcolor, soul} % colors
 \usepackage{graphicx} % images
-\usepackage{amsthm} % theorems
+\usepackage{amsmath,amsthm,amssymb} % math
 \usepackage{float} % image placement
 
 \theoremstyle{definition}
 \newtheorem{definition}{Definition}
 \newtheorem{practiceproblem}{Problem}[section]
 
-\def\scratchwork{\vspace*{10em}} % space for problem solving
+\def\scratchwork{\vspace*{15em}} % space for problem solving
 
 \newenvironment{problem}
 	{\noindent\begin{minipage}{\textwidth}\begin{practiceproblem}}
 	{\scratchwork\end{practiceproblem}\end{minipage}}
 
+\def\hlgreen{\sethlcolor{green}\hl}
+\def\hlyellow{\sethlcolor{yellow}\hl}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\title{Midterm Study Guide}
+\title{CSE 102 - Midterm Study Guide}
 
-\author{Zack Traczyk \\ CSE 102 - Vaggos, Winter 2024}
-\date{}
+\author{Zack Traczyk}
+\date{Vaggos, Winter 2024}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -59,6 +63,44 @@
 	\end{definition}
 
 	\subsection{Inductive Proofs}
+
+	\begin{definition}[Inductive Proof]
+		Simples rules of induction taken from CSE 16 with Prof. Tracy Larrabee.
+		\begin{enumerate}
+			\item Write down the \hlyellow{Left Hand Side} of $P(k+1)$.
+			\item Rewrite $P(k+1)$ to include \hlyellow{Left Hand Side} $P(k)$. 
+			\item Replace \hlyellow{Left Hand Side} of $P(k)$ with
+				\hlgreen{Right Hand Side} of $P(k)$.
+			\item Rewrite so \hlgreen{Right Hand Side} of $P(k)$ becomes
+				\hlgreen{Right Hand Side} of $P(k+1)$.
+		\end{enumerate}
+	\end{definition}
+
+	\noindent \textbf{Examples:}
+
+	\begin{proof} For all $n \in \mathbb{Z}^+$ the number $n^2 + n$ is even \\
+		\textbf{Base Case (n = 1):} 
+		$$n^2 + n = 1 + 1 = 2\text{, which is even}$$ \\
+		\textbf{Inductive Hypothesis:}
+		$$\text{Assume }n^2 + n\text{ is even, prove }(n + 1)^2 + (n + 1)\text{
+		is even}$$
+		\begin{gather}
+			(n + 1)^2 + (n + 1) = n^2 + 2n + 1 + n + 1 \\
+			= n^2 + n + 2n + 2 \\
+			2p = n^2 + n\text{, 2p is the definition of even} \\
+			= 2p + 2n + 2 \\
+			= 2(p + n + 1)\text{, which is even}
+		\end{gather}
+	\end{proof}
+
+
+	\subsection{Practice Problems}
+
+	\subsubsection{HW1 - Ex.1 Part 2}
+
+	\begin{problem}
+		Prove that $T(n) = 2T(n - 1) + 1$ is $T(n) = 2^n - 1$.
+	\end{problem}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
