@@ -13,13 +13,29 @@
 \newtheorem{practiceproblem}{Problem}[section]
 
 \def\scratchwork{\vspace*{15em}} % space for problem solving
+\def\ghbase{https://github.com/zacktraczyk/CSE102-Midterm-Study-Guide/blob/main/hw\%20answers/}
 
-\newenvironment{problem}
-	{\noindent\begin{minipage}{\textwidth}\begin{practiceproblem}}
-	{\scratchwork\end{practiceproblem}\end{minipage}}
+\newenvironment{problem}[2]
+{
+	\def\linktext{#1}
+	\def\linkdest{\ghbase#2}
+	\noindent \begin{minipage}{\textwidth}
+		\begin{practiceproblem}
+}
+{	
+		\end{practiceproblem}
+		\scratchwork
+
+		\href{\linkdest}{\textbf{Answer:} \linktext}
+	\end{minipage}
+}
 
 \def\hlgreen{\sethlcolor{green}\hl}
 \def\hlyellow{\sethlcolor{yellow}\hl}
+
+\def\psetone{vaggos\_W\_24\_CSE102\_01\_PSET\_1\_Solutions.pdf}
+\def\psettwo{vaggos\_W\_24\_CSE102\_01\_PSET\_2\_Solutions.pdf}
+\def\psetthree{vaggos\_W\_24\_CSE102\_01\_PSET\_3\_Solutions.pdf}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -98,7 +114,7 @@
 
 	\subsubsection{HW1 - Ex.1 Part 2}
 
-	\begin{problem}
+	\begin{problem}{HW1 - Ex.1 Part 2}{\psetone}
 		Prove that $T(n) = 2T(n - 1) + 1$ is $T(n) = 2^n - 1$.
 	\end{problem}
 
@@ -121,34 +137,34 @@
 	Like in many previous exercises and homeworks, find tight asymptotic bounds
 	(big-Theta) for $T(n)$ in each of the cases.
 
-	\begin{problem}
+	\begin{problem}{HW3 - Ex.4}{\psetthree}
 		$T(n)=2T(n/4)+n^2\sqrt n$
 	\end{problem}
-	\begin{problem}
+	\begin{problem}{HW3 - Ex.4}{\psetthree}
 		$T(n)=T(n-1)+\frac1n$
 	\end{problem}
-	\begin{problem}
+	\begin{problem}{HW3 - Ex.4}{\psetthree}
 		$T(n)=1600T(n/4)+n!$ (hint: answering this shouldn't require too many,
 		if any, difficult calculations)
 	\end{problem}
-	\begin{problem}
+	\begin{problem}{HW3 - Ex.4}{\psetthree}
 		$T(n)=6T(n/3)+n^4/\log^{25} n$ (hint: answering this shouldn't require
 		too many, if any, difficult calculations)
 	\end{problem}
-	\begin{problem}
+	\begin{problem}{HW3 - Ex.4}{\psetthree}
 		$T(n)=\sqrt n T(\sqrt{n}) + n$ (hint: when everything fails, you guess
 		and check)
 	\end{problem}
-	\begin{problem}
+	\begin{problem}{HW3 - Ex.4}{\psetthree}
 		$T(n)=T(n/2)+n(5-\cos^2n\sin^{20}n)$ (hint: answering this shouldn't
 		require too many, if any, difficult calculations, just think the most
 		basic trigonometric inequality)
 	\end{problem}
-	\begin{problem}
+	\begin{problem}{HW3 - Ex.4}{\psetthree}
 		$T(n)=\alpha T(n/4)+n^2$ (hint: your answer should depend on the
 		$\alpha$ parameter)
 	\end{problem}
-	\begin{problem}
+	\begin{problem}{HW3 - Ex.4}{\psetthree}
 		$T(n)=5T(n/5) +\frac{n}{\log_5 n}$ (hint: think of $n=5^m$. Also the
 		recursion $T(n)=T(n-1)+\frac1n$ above may come in handy.)
 	\end{problem}
